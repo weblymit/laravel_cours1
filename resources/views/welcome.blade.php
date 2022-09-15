@@ -1,31 +1,16 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends("layout.app")
+@section('title', 'Home')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section("content")
+<div class="container py-12">
+    @php
+        $toto = "<h1>Hello </h1>";
+    @endphp
+    <h1>{{ $title }}</h1>
+    <h1>{!! $toto !!}</h1>
 
-    <title>Laravel</title>
+    <img src='/img/pepa.jpeg' alt="">
 
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</div>
 
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
-    </style>
-    @vite(['resources/css/app.scss', 'resources/js/app.js'])
-</head>
-
-<body class="antialiased">
-    <div class="container">
-        <div class="toto">
-            <p class="text-red-500 font-bold">hello world</p>
-        </div>
-        <h1>Hello Toto</h1>
-    </div>
-
-</body>
-
-</html>
+@endsection

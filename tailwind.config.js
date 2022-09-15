@@ -5,6 +5,7 @@ module.exports = {
         "./resources/**/*.js",
         "./resources/**/*.vue",
     ],
+    presets:[require('./tailwind-preset')],
     theme: {
         extend: {},
     },

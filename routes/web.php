@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmilyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/', [EmilyController::class, 'index'])->name("home");
+Route::get('/posts/{id}', [EmilyController::class, 'show'])->whereNumber('id');
+Route::get('/about', [EmilyController::class, 'about']);
+
+// Route::get('about', function () {
+//     return view('about');
+// });
